@@ -45,11 +45,11 @@ describe('WalletEngine', () => {
     it('should reserve balance successfully', async () => {
       const result = await wallet.reserveBalance('user-1', 1000, 'reserve-1');
       expect(result.balanceBefore).toBe(10000);
-      expect(result.balanceAfter).toBe(10000); // balance unchanged, reserved increases
+      expect(result.balanceAfter).toBe(9000); // balance decreases, reserved increases
 
       const w = await wallet.getWallet('user-1');
       expect(w!.reservedBalance).toBe(1000);
-      expect(w!.balance).toBe(10000);
+      expect(w!.balance).toBe(9000);
     });
 
     it('should reject reserve when insufficient balance', async () => {
@@ -77,7 +77,7 @@ describe('WalletEngine', () => {
       const reservation = await wallet.reserveBalance('user-1', 500, 'loss-r1');
       const w = await wallet.settleLoss('user-1', 500, reservation.reservationId, 'loss-settle');
 
-      expect(w.balance).toBe(10000); // balance unchanged (500 was already reserved)
+      expect(w.balance).toBe(9500); // balance was deducted during reservation
       expect(w.reservedBalance).toBe(0);
     });
 
@@ -119,7 +119,7 @@ describe('WalletEngine', () => {
 
       const w = await wallet.getWallet('concurrent-user');
       expect(w!.reservedBalance).toBe(10000); // All 10 * 1000 reserved
-      expect(w!.balance).toBe(10000);
+      expect(w!.balance).toBe(0);
     });
 
     it('should reject when concurrent reservations exceed balance', async () => {

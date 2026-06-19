@@ -211,13 +211,13 @@ describe('BetEngine', () => {
         multiplier: 2,
         autoCashoutMultiplier: null,
         onLoss: 'double',
-        onWin: 'double',
+        onWin: 'increase',
         maxRounds: 10,
         currentRounds: 0,
       });
 
       const next = betEngine.calculateNextBetAmount('user-1', true, 100);
-      expect(next).toBe(200); // onWin: 'double' means 2 * 100
+      expect(next).toBe(200); // onWin: 'increase' means 2 * 100
     });
 
     it('should calculate next bet after loss', () => {

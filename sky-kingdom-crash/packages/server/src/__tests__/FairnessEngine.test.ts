@@ -205,6 +205,9 @@ describe('FairnessEngine', () => {
       const engine2 = new FairnessEngine();
       const data = engine2.generateRoundSeed('static-test-2', 101);
 
+      // Note: A 1% difference in edge causes the crash point to change by 1%,
+      // which is generally >= 0.01 for any crash point >= 1.00. Therefore,
+      // verification should fail if the wrong house edge is supplied.
       const verified = FairnessEngine.verify(
         data.serverSeed,
         data.clientSeed,
@@ -212,8 +215,7 @@ describe('FairnessEngine', () => {
         data.crashPoint,
         0.0, // wrong house edge
       );
-      // Should still be close enough (< 0.001 diff) because house edge is tiny
-      expect(verified).toBe(true);
+      expect(verified).toBe(false);
     });
   });
 });
