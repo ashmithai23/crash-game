@@ -1,0 +1,56 @@
+
+> sky-kingdom-crash@1.0.0 dev
+> turbo dev
+
+• turbo 2.9.18
+
+   • Packages in scope: @sky-kingdom/server, @sky-kingdom/shared, @sky-kingdom/web
+   • Running dev in 3 packages
+   • Remote caching disabled
+
+@sky-kingdom/web:dev: cache bypass, force executing c91bcfe0fcd4fdc5
+@sky-kingdom/server:dev: cache bypass, force executing 7dc88655cb85fa22
+@sky-kingdom/web:dev:
+@sky-kingdom/web:dev: > @sky-kingdom/web@1.0.0 dev
+@sky-kingdom/web:dev: > vite
+@sky-kingdom/web:dev:
+@sky-kingdom/server:dev:
+@sky-kingdom/server:dev: > @sky-kingdom/server@1.0.0 dev
+@sky-kingdom/server:dev: > tsx watch src/index.ts
+@sky-kingdom/server:dev:
+@sky-kingdom/web:dev:
+@sky-kingdom/web:dev:   VITE v5.4.21  ready in 307 ms
+@sky-kingdom/web:dev:
+@sky-kingdom/web:dev:   ➜  Local:   http://localhost:5173/
+@sky-kingdom/web:dev:   ➜  Network: use --host to expose
+@sky-kingdom/server:dev: ╔══════════════════════════════════════════════╗
+@sky-kingdom/server:dev: ║     Sky Kingdom Crash — Game Server          ║
+@sky-kingdom/server:dev: ╚══════════════════════════════════════════════╝
+@sky-kingdom/server:dev:
+@sky-kingdom/server:dev: [Redis] Connected
+@sky-kingdom/server:dev: [OK] Redis connected
+@sky-kingdom/server:dev: [OK] HTTP server listening on http://0.0.0.0:3001
+@sky-kingdom/server:dev: [OK] WebSocket server ready on ws://0.0.0.0:3001
+@sky-kingdom/server:dev: [OK] API available at http://0.0.0.0:3001/api
+@sky-kingdom/server:dev:
+@sky-kingdom/server:dev: [GAME] Starting game loop...
+@sky-kingdom/server:dev: [GAME] Tick rate: 50ms
+@sky-kingdom/server:dev: [GAME] Betting window: 5000ms
+@sky-kingdom/server:dev: [GAME] Max multiplier: 1000000x
+@sky-kingdom/server:dev: [GAME] House edge: 1%
+@sky-kingdom/server:dev:
+@sky-kingdom/server:dev: [GAME] Round engine started
+@sky-kingdom/server:dev: [READY] Sky Kingdom Crash is live!
+Shutting down Turborepo tasks...
+@sky-kingdom/server:dev:
+@sky-kingdom/server:dev: [SHUTDOWN] Received SIGINT. Shutting down gracefully...
+@sky-kingdom/server:dev: [SHUTDOWN] Round engine stopped
+@sky-kingdom/server:dev:
+@sky-kingdom/server:dev: [SHUTDOWN] Received SIGINT. Shutting down gracefully...
+@sky-kingdom/server:dev: [SHUTDOWN] Round engine stopped
+@sky-kingdom/server:dev: [SHUTDOWN] Redis disconnected
+@sky-kingdom/server:dev: [SHUTDOWN] HTTP server closed
+
+ Tasks:    0 successful, 2 total
+Cached:    0 cached, 2 total
+  Time:    28.622s
