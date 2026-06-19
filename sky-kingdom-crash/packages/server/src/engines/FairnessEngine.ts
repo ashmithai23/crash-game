@@ -93,7 +93,7 @@ export class FairnessEngine {
     const e = Math.pow(2, 52);
 
     // Standard crash point formula
-    const rawCrash = (e - h) / (e - 1);
+    const rawCrash = e / (e - h);
 
     // Apply house edge: crash point is multiplied by (1 - houseEdge)
     // This means the game has a slight house advantage
@@ -248,7 +248,7 @@ export class FairnessEngine {
     const hex = roundHash.substring(0, 13);
     const h = parseInt(hex, 16);
     const e = Math.pow(2, 52);
-    const rawCrash = (e - h) / (e - 1);
+    const rawCrash = e / (e - h);
     const withEdge = rawCrash * (1 - houseEdge);
     return Math.max(1.0, Math.floor(withEdge * 100) / 100);
   }

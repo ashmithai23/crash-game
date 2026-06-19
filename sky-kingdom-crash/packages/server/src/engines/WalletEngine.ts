@@ -179,7 +179,7 @@ export class WalletEngine {
         throw new WalletEngineError('Wallet not found', 'WALLET_NOT_FOUND', userId);
       }
 
-      const availableBalance = wallet.balance - wallet.reservedBalance;
+      const availableBalance = wallet.balance;
       if (amount > availableBalance) {
         throw new WalletEngineError(
           'Insufficient available balance',
@@ -193,6 +193,7 @@ export class WalletEngine {
       const balanceBefore = wallet.balance;
       const reservedBefore = wallet.reservedBalance;
 
+      wallet.balance -= amount;
       wallet.reservedBalance += amount;
       wallet.totalBets += 1;
       wallet.updatedAt = Date.now();
@@ -381,6 +382,7 @@ export class WalletEngine {
       const balanceBefore = wallet.balance;
       const reservedBefore = wallet.reservedBalance;
 
+      wallet.balance += betAmount;
       wallet.reservedBalance -= betAmount;
       wallet.updatedAt = Date.now();
 
@@ -487,7 +489,7 @@ export class WalletEngine {
         throw new WalletEngineError('Wallet not found', 'WALLET_NOT_FOUND', userId);
       }
 
-      const availableBalance = wallet.balance - wallet.reservedBalance;
+      const availableBalance = wallet.balance;
       if (amount > availableBalance) {
         throw new WalletEngineError(
           'Insufficient available balance for withdrawal',
