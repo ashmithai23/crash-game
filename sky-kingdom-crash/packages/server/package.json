@@ -1,0 +1,45 @@
+{
+  "name": "@sky-kingdom/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@sky-kingdom/shared": "*",
+    "express": "^4.19.0",
+    "socket.io": "^4.7.5",
+    "ioredis": "^5.4.1",
+    "drizzle-orm": "^0.31.0",
+    "postgres": "^3.4.4",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "google-auth-library": "^9.11.0",
+    "express-rate-limit": "^7.3.1",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "zod": "^3.23.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/uuid": "^9.0.8",
+    "vitest": "^1.6.0",
+    "eslint": "^8.57.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.5.0",
+    "drizzle-kit": "^0.22.0"
+  }
+}

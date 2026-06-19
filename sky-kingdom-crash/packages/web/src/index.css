@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Styles ────────────────────────────────────────── */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #050505;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(228, 199, 119, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(228, 199, 119, 0.5);
+  }
+}
+
+/* ─── Glassmorphism Utilities ────────────────────────────── */
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .glass-gold {
+    background: rgba(228, 199, 119, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(228, 199, 119, 0.2);
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #e4c777 0%, #f0d88a 50%, #c4a755 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-white {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── Keyframe Animations ────────────────────────────── */
+
+  @keyframes particleFloat {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+  }
+
+  @keyframes spaceTwinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes crashFlash {
+    0% { background: rgba(255, 0, 0, 0); }
+    25% { background: rgba(255, 0, 0, 0.3); }
+    100% { background: rgba(255, 0, 0, 0); }
+  }
+
+  @keyframes multiplierRise {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  .animate-particle-float {
+    animation: particleFloat 4s ease-in-out infinite;
+  }
+
+  .animate-space-twinkle {
+    animation: spaceTwinkle 3s ease-in-out infinite;
+  }
+
+  .animate-crash-flash {
+    animation: crashFlash 0.6s ease-out;
+  }
+
+  .animate-multiplier-rise {
+    animation: multiplierRise 0.15s ease-out;
+  }
+}
+
+/* ─── Environment Backgrounds ────────────────────────────── */
+
+.environment-low_sky {
+  background: linear-gradient(180deg, #87CEEB 0%, #4A90D9 100%);
+}
+
+.environment-cloud_layer {
+  background: linear-gradient(180deg, #C8D8E8 0%, #A0B8D0 50%, #7A9BB5 100%);
+}
+
+.environment-storm_zone {
+  background: linear-gradient(180deg, #2C3E50 0%, #1A1A2E 50%, #16213E 100%);
+}
+
+.environment-stratosphere {
+  background: linear-gradient(180deg, #0D0D2B 0%, #1B1B4B 50%, #2D1B69 100%);
+}
+
+.environment-space {
+  background: linear-gradient(180deg, #000011 0%, #0A0A2E 50%, #0D0D3B 100%);
+}
+
+.environment-cosmic_dimension {
+  background: linear-gradient(180deg, #000000 0%, #1A0033 30%, #0D0040 60%, #000000 100%);
+}

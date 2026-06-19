@@ -1,0 +1,29 @@
+{
+  "name": "sky-kingdom-crash",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "start": "node packages/server/dist/index.js",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "db:generate": "cd packages/server && npx drizzle-kit generate",
+    "db:push": "cd packages/server && npx drizzle-kit push",
+    "db:migrate": "cd packages/server && npx drizzle-kit migrate",
+    "db:studio": "cd packages/server && npx drizzle-kit studio",
+    "clean": "turbo clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "npm@10.0.0"
+}
